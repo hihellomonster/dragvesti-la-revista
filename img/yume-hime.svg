@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2017 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="431.8mm" height="279.4mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 43180 27940"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+   <clipPath id="id0">
+    <rect x="-3793.43" y="9736.56" width="22094.63" height="11093.34"/>
+   </clipPath>
+   <clipPath id="id1">
+    <path d="M21600.64 -35.23l21613.91 43.17 0 27960.95 -21613.91 -43.17 0 -27960.95z"/>
+   </clipPath>
+ </defs>
+ <g id="Capa_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g style="clip-path:url(#id0)">
+   <image x="-3793.43" y="9736.56" width="22094.63" height="11093.34" xlink:href="yume-hime_Images\yume-hime_ImgID1.png"/>
+  </g>
+  <g style="clip-path:url(#id1)">
+   <image x="19142.38" y="-1951.99" width="29971.35" height="29940.13" xlink:href="yume-hime_Images\yume-hime_ImgID2.png"/>
+  </g>
+ </g>
+</svg>
