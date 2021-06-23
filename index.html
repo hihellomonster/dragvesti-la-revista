@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+
+
+<style>
+    body {
+        font-family: Verdana, sans-serif;
+        margin: 0;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    .row>.column {
+        padding: 0 8px;
+    }
+    
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    .column {
+        float: left;
+        width: 25%;
+    }
+    /* The Modal (background) */
+    
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: black;
+    }
+    /* Modal Content */
+    
+    .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        width: 90%;
+        max-width: 1200px;
+    }
+    /* The Close Button */
+    
+    .close {
+        color: white;
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 35px;
+        font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #999;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    .mySlides {
+        display: none;
+    }
+    
+    .cursor {
+        cursor: pointer;
+    }
+    /* Next & previous buttons */
+    
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+    /* Position the "next button" to the right */
+    
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+    /* On hover, add a black background color with a little bit see-through */
+    
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    /* Number text (1/3 etc) */
+    
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+    
+    img {
+        margin-bottom: -4px;
+    }
+    
+    .caption-container {
+        text-align: center;
+        background-color: black;
+        padding: 2px 16px;
+        color: white;
+    }
+    
+    .demo {
+        opacity: 0.6;
+    }
+    
+    .active,
+    .demo:hover {
+        opacity: 1;
+    }
+    
+    img.hover-shadow {
+        transition: 0.3s;
+    }
+    
+    .hover-shadow:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+</style>
+<style>
+        .responsive360 {
+        width: 100%;
+        max-width: 360px;
+        height: auto;
+        /* width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center; */
+</style>
+
+<body>
+
+    <div class="w3-bar w3-large " style="background-color: black;">
+        <a href="style-guide.html" class="w3-bar-item "><i class="fa fa-bars"  ></i><span style="color: white;">X</span></a>
+        <span class="w3-bar-item " style="color: white;">Dragvesti: La revista</span>
+        <a href="style-guide.html" class="w3-bar-item w3-right"><i class="fa fa-search"  ></i><span style="color: white;">X</span></a>
+    </div>
+
+
+    <!-- otro-->
+    <div class="w3-container w3-content">
+
+
+        <div class="w3-container w3-mobile">
+            <header class="w3-container">
+                <h3></h3>
+            </header>
+        </div>
+
+
+        <div class="row">
+            <div class="column">
+                <img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/00-las-durango.webp" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/01-joane-buttons-drag-queen.webp" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/02-drag-queen-raven.webp" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="column">
+                <img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/30-drag-queen-colombia-Joane-Buttons.webp" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+            </div>
+        </div>
+
+        <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content responsive360">
+
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/00-las-durango.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/01-joane-buttons-drag-queen.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/02-drag-queen-raven.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/03-indice-agradecimiento.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/04-drag-mystique-america-fendi-iviza-lioza.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/05-raven-bio.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/06-drag-raven-bio.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/07-amor-o-enamoramiento.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/08-diferencias-entre-amor-y-enamoramiento.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/09-no-confundir-los-sentimientos.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/10-drag-queen-joane-buttons-medellin-colombia.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/11-en-que-se-inspira-tu-arte-drag.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/12-cual-es-tu-definicion-de-ser-drag.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/13-sister-drag-sharllott-zodoma-colombia.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/14-el-amor-y-el-arte-drag.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/15-cual-es-el-mensaje-que-debe-transmitir-una-drag-queen.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/16-tipos-de-discurso-drag-abandono-amor-expresion-encontrar-la-aceptacion.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/17-cordelia-durango-drag-queen-mucho-kai-kai.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/23-cordelia-durango-drag-queen.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/18-barbara-y-cordelia-durango-las-durango.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/19-la-importancia-de-escoger-el-nombre-drag.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/20-la-personalidad-de-un-drag-queen.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/21-barbara-durango.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/22-elementos-que-debe-tener-una-drag-queen.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/24-historias-de-una-drag-queen.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/25-como-es-la-relacion-entre-drags.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/26-sesion-de-fotos.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/27-fiestas-bomba-cdmx.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/28-jujubee-en-la-cdmx-mexico.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/29-dragvesti-online.webp" style="width:100%"></div>
+                <div class="mySlides"><img src="https://hihellomonster.github.io/dragvesti-la-revista/drag/30-drag-queen-colombia-Joane-Buttons.webp" style="width:100%"></div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <div class="caption-container">
+                    <p id="caption"></p>
+                </div>
+
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/00-las-durango.webp" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/01-joane-buttons-drag-queen.webp" style="width:100%" onclick="currentSlide(2)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/02-drag-queen-raven.webp" style="width:100%" onclick="currentSlide(3)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/03-indice-agradecimiento.webp" style="width:100%" onclick="currentSlide(4)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/04-drag-mystique-america-fendi-iviza-lioza.webp" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/05-raven-bio.webp" style="width:100%" onclick="currentSlide(6)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/06-drag-raven-bio.webp" style="width:100%" onclick="currentSlide(7)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/07-amor-o-enamoramiento.webp" style="width:100%" onclick="currentSlide(8)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/08-diferencias-entre-amor-y-enamoramiento.webp" style="width:100%" onclick="currentSlide(9)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/09-no-confundir-los-sentimientos.webp" style="width:100%" onclick="currentSlide(10)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/10-drag-queen-joane-buttons-medellin-colombia.webp" style="width:100%" onclick="currentSlide(11)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/11-en-que-se-inspira-tu-arte-drag.webp" style="width:100%" onclick="currentSlide(12)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/12-cual-es-tu-definicion-de-ser-drag.webp" style="width:100%" onclick="currentSlide(13)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/13-sister-drag-sharllott-zodoma-colombia.webp" style="width:100%" onclick="currentSlide(14)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/14-el-amor-y-el-arte-drag.webp" style="width:100%" onclick="currentSlide(15)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/15-cual-es-el-mensaje-que-debe-transmitir-una-drag-queen.webp" style="width:100%" onclick="currentSlide(16)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/16-tipos-de-discurso-drag-abandono-amor-expresion-encontrar-la-aceptacion.webp" style="width:100%" onclick="currentSlide(17)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/17-cordelia-durango-drag-queen-mucho-kai-kai.webp" style="width:100%" onclick="currentSlide(18)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/23-cordelia-durango-drag-queen.webp" style="width:100%" onclick="currentSlide(19)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/18-barbara-y-cordelia-durango-las-durango.webp" style="width:100%" onclick="currentSlide(20)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/19-la-importancia-de-escoger-el-nombre-drag.webp" style="width:100%" onclick="currentSlide(21)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/20-la-personalidad-de-un-drag-queen.webp" style="width:100%" onclick="currentSlide(22)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/21-barbara-durango.webp" style="width:100%" onclick="currentSlide(23)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/22-elementos-que-debe-tener-una-drag-queen.webp" style="width:100%" onclick="currentSlide(24)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/24-historias-de-una-drag-queen.webp" style="width:100%" onclick="currentSlide(25)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/25-como-es-la-relacion-entre-drags.webp" style="width:100%" onclick="currentSlide(26)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/26-sesion-de-fotos.webp" style="width:100%" onclick="currentSlide(27)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/27-fiestas-bomba-cdmx.webp" style="width:100%" onclick="currentSlide(28)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/28-jujubee-en-la-cdmx-mexico.webp" style="width:100%" onclick="currentSlide(29)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/29-dragvesti-online.webp" style="width:100%" onclick="currentSlide(30)" alt="Nature and sunrise"></div>
+                <div class="column"><img class="demo cursor" src="https://hihellomonster.github.io/dragvesti-la-revista/drag/30-drag-queen-colombia-Joane-Buttons.webp" style="width:100%" onclick="currentSlide(30)" alt="Nature and sunrise"></div>
+            </div>
+        </div>
+
+
+
+        <h3>Enlaces</h3>
+        <div class="w3-panel w3-white w3-card w3-display-container">
+            <br><a href="amor-o-enamoramiento.html">Amor o enamoramiento</a><br>
+            <a href="dragvesti-la-revista.html">La revista</a>
+            <br><br>
+        </div>
+        <hr>
+    </div>
+    <!-- otro fin -->
+    <hr>
+    <br>
+
+
+    <footer class="w3-container w3-bottom  w3-margin-top " style="background-color: black;">
+        <p style="color: white;">=)! </p>
+    </footer>
+
+
+    <script>
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
+
+</body>
+
+</html>
+
+<!-- 
+00-las-durango.webp
+01-joane-buttons-drag-queen.webp
+02-drag-queen-raven.webp
+03-indice-agradecimiento.webp
+04-drag-mystique-america-fendi-iviza-lioza.webp
+05-raven-bio.webp
+06-drag-raven-bio.webp
+07-amor-o-enamoramiento.webp
+08-diferencias-entre-amor-y-enamoramiento.webp
+09-no-confundir-los-sentimientos.webp
+10-drag-queen-joane-buttons-medellin-colombia.webp
+11-en-que-se-inspira-tu-arte-drag.webp
+12-cual-es-tu-definicion-de-ser-drag.webp
+13-sister-drag-sharllott-zodoma-colombia.webp
+14-el-amor-y-el-arte-drag.webp
+15-cual-es-el-mensaje-que-debe-transmitir-una-drag-queen.webp
+16-tipos-de-discurso-drag-abandono-amor-expresion-encontrar-la-aceptacion.webp
+17-cordelia-durango-drag-queen-mucho-kai-kai.webp
+23-cordelia-durango-drag-queen.webp
+18-barbara-y-cordelia-durango-las-durango.webp
+19-la-importancia-de-escoger-el-nombre-drag.webp
+20-la-personalidad-de-un-drag-queen.webp
+21-barbara-durango.webp
+22-elementos-que-debe-tener-una-drag-queen.webp
+24-historias-de-una-drag-queen.webp
+25-como-es-la-relacion-entre-drags.webp
+26-sesion-de-fotos.webp
+27-fiestas-bomba-cdmx.webp
+28-jujubee-en-la-cdmx-mexico.webp
+29-dragvesti-online.webp
+30-drag-queen-colombia-Joane-Buttons.webp
+ -->
